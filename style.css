@@ -8,13 +8,27 @@ body {
   }
 
   .container {
-    max-width: 800px;
+    max-width: 2400px; /* Adjust for larger screens */
+    width: 90%; /* Ensures it scales dynamically */
     margin: 20px auto;
     padding: 20px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1024px) {
+  .container {
+      width: 95%; /* Slightly shrink for tablets */
+      max-width: 900px;
   }
+}
+
+@media (max-width: 768px) {
+  .container {
+      width: 100%; /* Take full width for mobile */
+      padding: 15px;
+  }
+}
 
   h1 {
     text-align: center;
