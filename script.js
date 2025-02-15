@@ -89,27 +89,12 @@ function redirectTo(url) {
           pdfList.style.display = "block";
         }
       }
-function searchPDFs() {
-  // Get the search input value and convert to uppercase for case-insensitive comparison
-  const input = document.getElementById('searchInput');
-  const filter = input.value.toUpperCase();
-  
-  // Get the container holding all PDF items
-  const pdfList = document.getElementById('pdfList');
-  
-  // Get all PDF items within the container
-  const pdfItems = pdfList.getElementsByClassName('pdf-item');
-  
-  // Loop through all PDF items and hide those that don't match the search query
-  for (let i = 0; i < pdfItems.length; i++) {
-    const pdfName = pdfItems[i].getElementsByClassName('pdf-file-name')[0];
-    if (pdfName) {
-      const txtValue = pdfName.textContent || pdfName.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        pdfItems[i].style.display = '';
-      } else {
-        pdfItems[i].style.display = 'none';
+    function searchPDFs() {
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let pdfItems = document.getElementsByClassName("pdf-item");
+      
+        for (let i = 0; i < pdfItems.length; i++) {
+          let fileName = pdfItems[i].textContent || pdfItems[i].innerText;
+          pdfItems[i].style.display = fileName.toLowerCase().includes(input) ? "" : "none";
+        }
       }
-    }
-  }
-}
