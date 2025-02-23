@@ -1,0 +1,425 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+
+  .container {
+    max-width: 2400px; 
+    width: 90%; 
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1024px) {
+  .container {
+      width: 95%; /* Slightly shrink for tablets */
+      max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+      width: 100%; /* Take full width for mobile */
+      padding: 15px;
+  }
+}
+
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #34495e;
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+  }
+
+  .step {
+    margin-bottom: 30px;
+  }
+
+  .step h3 {
+    color: #3498db;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+
+  .step p {
+    margin: 0;
+    color: #555;
+  }
+
+  .step a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .step a:hover {
+    background-color: #2980b9;
+  }
+
+  .step ul {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+
+  .step ul li {
+    margin-bottom: 5px;
+  }
+
+  .additional-tips {
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 30px;
+  }
+
+  .additional-tips h3 {
+    color: #34495e;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+
+  .additional-tips ul {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+
+  .additional-tips ul li {
+    margin-bottom: 5px;
+  }
+   /* Modal Styling */
+   .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Button Styling */
+.watch-now-btn, .view-pdfs-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.watch-now-btn:hover, .view-pdfs-btn:hover {
+  background: #2980b9;
+}
+
+
+/* Keep your existing styles below */
+/* Keep your existing styles for container, step, buttons etc. below */
+
+/* PDF Download Item Styling */
+.pdf-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  margin: 15px 0;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+.pdf-item:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.pdf-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+}
+
+.pdf-file-name {
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2d3436;
+  line-height: 1.4;
+}
+.search-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 1.1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* Sticky Sidebar - Stays at the Top */
+.sticky-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background: #2c3e50;
+  padding: 20px;
+  color: white;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.sticky-sidebar h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.sticky-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sticky-sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sticky-sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sticky-sidebar ul li a:hover {
+  color: #3498db;
+}
+
+/* Existing styles remain unchanged... */
+
+/* Ensure the dropdown container is positioned relatively */
+.nav-item.custom-dropdown {
+  position: relative;
+}
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;  /* Position below the Playlist button */
+  left: 0;
+  width: 200px;  /* Adjust as needed */
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-height: 200px;  /* For example, 4 items at ~50px each */
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox: hide scrollbar */
+  -ms-overflow-style: none; /* IE and Edge: hide scrollbar */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.dropdown-menu::-webkit-scrollbar {
+  display: none;
+}
+
+/* Desktop behavior: Show dropdown on hover */
+@media (min-width: 1024px) {
+  .nav-item.custom-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+/* Mobile/Tablet: The click event (already in your script.js) toggles display */
+ /* Navbar Container */
+ .nav-header-container {
+  background: #2c3e50;
+  padding: 10px 20px;
+}
+/* Navbar Styling */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-items {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+/* Custom Dropdown Styles */
+.custom-dropdown {
+  position: relative;
+}
+.custom-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  color: #333;
+  min-width: 200px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-height: 200px; /* Shows roughly 4 items at a time */
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  z-index: 100;
+}
+.custom-dropdown .dropdown-menu::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.custom-dropdown .dropdown-menu a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+.custom-dropdown .dropdown-menu a:hover {
+  background: #f4f4f4;
+}
+/* Desktop: Show dropdown on hover */
+@media (min-width: 1024px) {
+  .custom-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+.nav-header-container {
+  background: #2c3e50;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar Styling */
+.nav-container {
+  display: flex;
+  justify-content: center; /* Center the nav elements */
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+/* Custom Dropdown Styles */
+.custom-dropdown {
+  position: relative;
+}
+
+.custom-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;  /* Position below the dropdown toggle */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #333;
+  min-width: 200px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-height: 200px; /* Shows roughly 4 items at a time */
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  z-index: 100;
+}
+
+.custom-dropdown .dropdown-menu::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.custom-dropdown .dropdown-menu a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.custom-dropdown .dropdown-menu a:hover {
+  background: #f4f4f4;
+}
+
+/* Desktop: Show dropdown on hover */
+@media (min-width: 1024px) {
+  .custom-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+h2 {
+  scroll-margin-top: 80px; /* Adjust this value to match your navbar's height */
+}
