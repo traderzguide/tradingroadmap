@@ -91,3 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+function redirectTo(url) {
+  window.open(url, '_blank');
+}
