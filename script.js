@@ -64,3 +64,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+document.addEventListener('DOMContentLoaded', function() {
+  // Playlist Dropdown Toggle: always toggle on click
+  const playlistToggle = document.querySelector('.custom-dropdown .dropdown-toggle');
+  if (playlistToggle) {
+    playlistToggle.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent any default link action
+      e.stopPropagation(); // Stop event bubbling so it doesn't immediately trigger the document click handler
+      const dropdownMenu = this.nextElementSibling;
+      if (dropdownMenu) {
+        // Toggle display
+        dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+      }
+    });
+  }
+
+  // Close dropdown if clicking outside the Playlist nav
+  document.addEventListener('click', function(e) {
+    const dropdownMenu = document.querySelector('.custom-dropdown .dropdown-menu');
+    const playlistToggle = document.querySelector('.custom-dropdown .dropdown-toggle');
+    // If the click target is not within the Playlist nav or its dropdown, hide the dropdown
+    if (dropdownMenu && playlistToggle &&
+        !playlistToggle.contains(e.target) &&
+        !dropdownMenu.contains(e.target)) {
+      dropdownMenu.style.display = 'none';
+    }
+  });
+});
